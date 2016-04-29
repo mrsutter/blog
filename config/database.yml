@@ -1,0 +1,14 @@
+base: &base
+  adapter: postgresql
+  encoding: utf-8
+  pool: 5
+  password:
+  username: postgres
+
+development:
+  <<: *base
+  database: blog_dev
+
+test:
+  <<: *base
+  database: blog_test

@@ -24,6 +24,7 @@ gem 'select2-rails'
 gem 'config'
 
 gem 'ancestry'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'annotate'
 gem 'awesome_print'

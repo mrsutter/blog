@@ -4,7 +4,7 @@ def parse_source_data
 end
 
 def find_or_create_category(name, parent)
-  Category.find_or_create_by(name: name) do |category|
+  Category.find_or_create_by!(name: name) do |category|
     category.parent = parent
   end
 end

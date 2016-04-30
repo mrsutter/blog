@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :category do
-    name { Faker::Lorem.word }
+    name { Faker::Name.name }
 
     trait :with_post do
       after(:create) do |category|

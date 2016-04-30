@@ -25,6 +25,7 @@ gem 'config'
 
 gem 'ancestry'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'valid_email'
 
 gem 'annotate'
 gem 'awesome_print'

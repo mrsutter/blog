@@ -10,6 +10,7 @@ module Blog
       g.test_framework :rspec
     end
 
+    config.autoload_paths << Rails.root.join('lib')
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales',
                                                  '**', '*.{rb,yml}')]
 

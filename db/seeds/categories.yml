@@ -1,0 +1,47 @@
+music:
+  rock_music:
+    - rock_and_roll
+    - punk_rock
+    - hard_rock
+    - folk_rock
+    - alternative_rock
+  electronic_music:
+    - electroclash
+    - synthpop
+    - new_wave
+    - ambient
+  pop_music:
+    - baroque_pop
+    - eurodance
+    - easy_listening
+
+books:
+  drama_fiction:
+    - comedy_drama
+    - tragedy_drama
+    - theatre_of_the_absurd
+  fantastic_fiction:
+    - science_fiction
+    - fantasy_fiction
+    - cyberpunk_fiction
+    - horror_fiction
+  detective_fiction:
+    - spy_novel
+    - noir_fiction
+    - legal_thriller_fiction
+  non_fiction:
+    - memoir
+    - popular_science
+    - journalizm
+
+movies:
+  drama_movies:
+    - action_movies
+    - adventure_movies
+    - thriller_movies
+    - western_movies
+    - courtroom_drama_movies
+  comedy_movies:
+    - sketch
+    - sitcom
+    - romantic_comedy_movies

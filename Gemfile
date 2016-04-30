@@ -23,6 +23,8 @@ gem 'select2-rails'
 
 gem 'config'
 
+gem 'ancestry'
+
 gem 'annotate'
 gem 'awesome_print'
 

@@ -1,5 +1,11 @@
-require 'rails_helper'
-
 RSpec.describe Post, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '.destroy' do
+    let(:post) { create(:post, :with_comments) }
+
+    it 'destroys category posts' do
+      comments_count = post.comments.count
+      expect { post.destroy }
+        .to change { Comment.by_post(post).count }.by(-comments_count)
+    end
+  end
 end

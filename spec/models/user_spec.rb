@@ -1,5 +1,9 @@
-require 'rails_helper'
-
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '.destroy' do
+    let!(:user) { create(:user, :with_comments) }
+
+    it "doesn't destroy user comments" do
+      expect { user.destroy }.not_to change { Comment.count }
+    end
+  end
 end

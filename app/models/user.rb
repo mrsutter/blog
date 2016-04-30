@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  has_many :comments
+
   enum role: [:user, :admin]
 
   validates :email, presence: true, uniqueness: true, email: true

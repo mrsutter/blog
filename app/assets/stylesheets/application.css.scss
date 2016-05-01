@@ -4,3 +4,14 @@
 @import "font-awesome";
 @import 'select2';
 @import 'select2-bootstrap';
+
+.navbar-inverse .navbar-btn {
+  background-color: #222222;
+  border-color: #333333;
+  color: #999999;
+}
+
+.navbar-inverse .navbar-btn:hover {
+  color: #ffffff;
+  background-color: #333333;
+}

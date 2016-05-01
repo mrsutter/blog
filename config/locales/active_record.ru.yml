@@ -1,0 +1,32 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one: Пользователь
+        other: Пользователи
+    attributes:
+      user:
+        id: Id
+        email: Email
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        role: Роль
+        created_at: Создан
+    values:
+      user:
+        role:
+          admin: Администратор
+          user: Пользователь
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Email не может быть пустым
+              taken: Email уже занят
+            password:
+              blank: Пароль не может быть пустым
+              too_short: Пароль должен содержать больше 5 символов
+            password_confirmation:
+              blank: Необходимо подтверждение пароля
+              confirmation: Пароли не совпадают

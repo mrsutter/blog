@@ -1,0 +1,8 @@
+ru:
+  flash:
+    controllers:
+      web:
+        user:
+          sessions:
+            create:
+              wrong_pair: Неверная связка логин/пароль

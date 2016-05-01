@@ -1,0 +1,5 @@
+mailer:
+  from:
+    no_reply: 'no-reply@yakspavel-blog.herokuapp.com'
+session:
+  ttl: <%= 7.days %>

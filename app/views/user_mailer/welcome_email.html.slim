@@ -1,0 +1,16 @@
+span
+  = t('user_mailer.welcome.greeting', name: @user.email)
+br
+span
+  = t('user_mailer.welcome.gratitude')
+  |&nbsp;
+  = link_to @host, root_url
+  | .
+br
+span
+  = t('user_mailer.welcome.role',
+    role: User.human_attribute_value(:role, @user.role).mb_chars.downcase.to_s)
+  = t("user_mailer.welcome.#{@user.role}_permissions")
+br
+span
+  = t('user_mailer.welcome.yours_respectfully')

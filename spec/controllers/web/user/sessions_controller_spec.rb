@@ -39,6 +39,15 @@ describe Web::User::SessionsController, type: :controller do
 
         expect(signed_in?).to be true
       end
+
+      context 'when remember me is passed' do
+        it 'signs in user' do
+          post :create, session_params(email, pass, true)
+          expect(response).to redirect_to(root_url)
+
+          expect(signed_in?).to be true
+        end
+      end
     end
 
     context 'when params are wrong' do

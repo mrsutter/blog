@@ -1,0 +1,15 @@
+ru:
+  web:
+    posts:
+      index:
+        no_posts: Пока нет ни одного поста :(
+        destroy_confirmation: Удалить пост?
+        create_first_post: Создать первый пост
+      show:
+        edit: Редактировать
+        destroy: Удалить
+        destroy_confirmation: Удалить пост?
+      form:
+        new_post: Новый пост
+        post_title: 'Пост #%{post_id}'
+        submit: Сохранить

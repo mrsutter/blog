@@ -3,3 +3,4 @@ ru:
     application:
       sign_out: Выход
       sign_in: Войти
+      new_post: Новый пост

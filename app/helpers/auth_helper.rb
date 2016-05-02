@@ -22,6 +22,10 @@ module AuthHelper
     @current_user ||= User.find_by(id: cookies.signed[:user_id])
   end
 
+  def current_user_admin?
+    current_user && current_user.admin?
+  end
+
   def authenticate_user!
     redirect_to new_user_session_path unless signed_in?
   end

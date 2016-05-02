@@ -1,0 +1,26 @@
+.posts
+  .row
+    .col-md-offset-3.col-md-6
+      h3.text-center
+        = @post.name
+      h6.text-center
+        = l(@post.created_at, format: :full)
+      .row
+        = icon(:flag, class: 'fa-lg fa-grey')
+        |&nbsp;&nbsp;&nbsp;
+        span.category
+          = @post.category.human_attribute_value(:name)
+      .row
+        .body-box
+          = @post.body
+      - if @post.tag_list.any?
+        .row
+          = icon(:tags, class: 'fa-lg fa-grey')
+          |&nbsp;&nbsp;&nbsp;
+          span.tags-box
+            = @post.tag_list.join(', ')
+      - if current_user_admin?
+        .pull-right
+          = link_to t('.edit'), edit_post_path(@post), class: 'btn btn-success'
+          | &nbsp;
+          = link_to t('.destroy'), post_path(@post), method: :delete, class: 'btn btn-danger', data: { confirm: t('.destroy_confirmation') }

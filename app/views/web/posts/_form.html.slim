@@ -1,0 +1,17 @@
+.col-md-offset-3.col-md-6
+  = simple_form_for model_instance, url: url, method: method do |f|
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title
+          - if model_instance.new_record?
+            = t('.new_post')
+          - else
+            = t('.post_title', post_id: model_instance.id)
+      .panel-body
+        = f.input :category_id, label: Post.human_attribute_name(:category), collection: category_tree_for_select, input_html: { id: 'category-select' }, include_blank: false
+        = f.input :name, label: Post.human_attribute_name(:name)
+        = f.input :body, label: Post.human_attribute_name(:body), input_html: { rows: 4, cols: 50 }
+        = f.input :tag_list, label: Post.human_attribute_name(:tag_list), collection: ActsAsTaggableOn::Tag.all, input_html: { id: 'tag-select', multiple: 'multiple' }, value_method: :name
+
+        .pull-right
+          = f.button :submit, t('.submit'), class: 'btn btn-success'

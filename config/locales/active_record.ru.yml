@@ -4,6 +4,9 @@ ru:
       user:
         one: Пользователь
         other: Пользователи
+      post:
+        one: Пост
+        other: Посты
     attributes:
       user:
         id: Id
@@ -12,13 +15,78 @@ ru:
         password_confirmation: Подтверждение пароля
         role: Роль
         created_at: Создан
+      post:
+        id: Id
+        name: Тема
+        body: Содержание
+        created_at: Время создания
+        category: Категория
+        tag_list: Тэги
     values:
       user:
         role:
           admin: Администратор
           user: Пользователь
+      category:
+        name:
+          music: Музыка
+          rock_music: Рок
+          rock_and_roll: Рок-н-ролл
+          punk_rock: Панк-рок
+          hard_rock: Хард-рок
+          folk_rock: Фолк-рок
+          alternative_rock: Альтернативный рок
+          electronic_music: Электронная музыка
+          electroclash: Электроклэш
+          synthpop: Синти-поп
+          new_wave: Новая Волна
+          ambient: Эмбиент
+          pop_music: Поп-музыка
+          baroque_pop: Барокко-поп
+          eurodance: Евродэнс
+          easy_listening: Легкая музыка
+
+          books: Книги
+          drama_fiction: Драматические произведения
+          comedy_drama: Комедия
+          tragedy_drama: Трагедия
+          theatre_of_the_absurd: Театр абсурда
+          fantastic_fiction: Фантастика
+          science_fiction: Научная фантастика
+          fantasy_fiction: Фэнтези
+          cyberpunk_fiction: Киберпанк
+          horror_fiction: Ужасы
+          detective_fiction: Детективы
+          spy_novel: Шпионский роман
+          noir_fiction: Нуар
+          legal_thriller_fiction: Юридический триллер
+          non_fiction: Документальная проза
+          memoir: Мемуары
+          popular_science: Популярная наука
+          journalizm: Журналистика
+
+          movies: Кино
+          drama_movies: Драмы
+          action_movies: Экшн
+          adventure_movies: Приключенческое кино
+          thriller_movies: Триллер
+          western_movies: Вестерн
+          courtroom_drama_movies: Судебная драма
+          comedy_movies: Комедии
+          sketch: Скетч
+          sitcom: Ситком
+          romantic_comedy_movies: Романтические комедии
+
     errors:
       models:
+        post:
+          attributes:
+            category:
+              blank: Категория не может быть пустой
+            name:
+              blank: Тема не может быть пустой
+            body:
+              blank: Содержание не может быть пустым
         user:
           attributes:
             email:

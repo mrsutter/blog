@@ -16,6 +16,12 @@ html
             span.icon-bar
           = link_to 'Blog', root_path, class: 'navbar-brand'
         #navbar.collapse.navbar-collapse
+          - if current_user && current_user.admin?
+            ul.nav.navbar-nav
+              li= link_to new_post_path do
+                 = icon(:pencil)
+                 |&nbsp;
+                 = t('.new_post')
           - if current_user
             ul.nav.navbar-nav.navbar-right
               li.dropdown

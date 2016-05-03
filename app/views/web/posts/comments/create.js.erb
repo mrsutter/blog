@@ -1,0 +1,17 @@
+var captchaErrors = $('#captcha-errors');
+<% if @comment.errors.empty? %>
+  var commentsForm = $('#comment-form');
+
+  var commentsList = $('#comments');
+  var commentsCountElem = $('#comments-count');
+
+  var commentsCount = '<%= j(@post.comments.count.to_s)%>';
+  var commentsPluralized = '<%= j(Comment.model_name.human(count: @post.comments.count))%>';
+  commentsCountElem.html(commentsCount + '&nbsp' + commentsPluralized);
+  captchaErrors.html('');
+
+  commentsList.append("<%= j(render 'show', comment: @comment) %>");
+  commentsForm[0].reset();
+<% else %>
+  captchaErrors.html('<%= j(@comment.errors.full_messages_for(:captcha).first)%>');
+<% end %>

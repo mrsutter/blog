@@ -54,6 +54,23 @@
     font-size: small;
   }
 
+  .comments-count {
+
+    a {
+      color: grey;
+      font-size: 90%;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+
+  }
+
   .body-box {
     font-size: 90%;
     white-space: pre-wrap;
@@ -61,6 +78,7 @@
   }
 
   .post-actions {
+
     margin-left: 5px;
     position: absolute;
     right: 10px;
@@ -72,5 +90,54 @@
 
   hr {
     margin-bottom: 0;
+  }
+
+  #comments {
+    margin-top: 20px;
+
+    hr {
+      margin-top: 0;
+    }
+
+    #comments-count {
+      font-weight: bold;
+    }
+
+    #comment-form {
+       #captcha-errors {
+        color: red;
+        padding-left: 10px;
+      }
+
+      .submit-box {
+        display: inline-block;
+        float: right;
+      }
+
+
+      .submit-element {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 10px;
+      }
+    }
+
+    .comment-container {
+
+      font-size: 90%;
+
+      .media-body {
+
+        .media-heading {
+          .comment-author {
+            font-weight: bold;
+          }
+
+          .comment-date {
+            color: grey;
+          }
+        }
+      }
+    }
   }
 }

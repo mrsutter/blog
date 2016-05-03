@@ -9,6 +9,7 @@ class Web::PostsController < Web::ApplicationController
 
   def show
     find_post
+    init_comment
   end
 
   def new
@@ -52,7 +53,11 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def find_post
-    @post ||= Post.find(params[:id])
+    @post ||= Post.includes(comments: :user).find(params[:id])
+  end
+
+  def init_comment
+    @comment = Comment.new
   end
 
   def post_params

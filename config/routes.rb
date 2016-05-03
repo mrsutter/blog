@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   scope module: :web do
     root to: 'posts#index'
 
-    resources :posts
+    resources :posts do
+      scope module: :posts do
+        resources :comments
+      end
+    end
+
     resources :users, only: [:new, :create]
 
     namespace :user do

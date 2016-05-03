@@ -98,7 +98,7 @@ describe Web::User::SessionsController, type: :controller do
 
     it 'signs out user and redirects to root' do
       delete :destroy
-      expect(response).to redirect_to(root_url)
+      expect(response).to redirect_to(new_user_session_url)
       expect(signed_in?).to be false
     end
   end

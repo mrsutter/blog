@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'select2-rails'
+gem 'recaptcha', require: 'recaptcha/rails'
 
 gem 'figaro'
 gem 'config'
@@ -29,6 +30,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'valid_email'
 
 gem 'human_attribute_values'
+gem 'russian'
 
 gem 'annotate'
 gem 'awesome_print'

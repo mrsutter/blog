@@ -1,0 +1,14 @@
+.media.comment-container
+  .media-left
+    = image_tag('default_avatar.jpg', width: '40px')
+  .media-body
+    .media-heading
+      span.comment-author
+        - if comment.user
+          = comment.user.email
+        - else
+          = t('.guest')
+      span.comment-date
+        |&nbsp; &bull; &nbsp;
+        = l(comment.created_at, format: :full)
+    = comment.body

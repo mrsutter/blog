@@ -13,3 +13,8 @@ ru:
         new_post: Новый пост
         post_title: 'Пост #%{post_id}'
         submit: Сохранить
+      comments:
+        show:
+          guest: Гость
+        form:
+          submit: Добавить комментарий

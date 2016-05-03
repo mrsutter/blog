@@ -21,6 +21,13 @@
           .row
             .body-box
               = post.body
+          .pull-right.comments-count
+            = link_to post_path(post) + '#comments' do
+              = icon('comments', class: 'fa-lg fa-grey')
+              |&nbsp;
+              = post.comments.count
+              |&nbsp;
+              = Comment.model_name.human(count: post.comments.count)
           - if post.tag_list.any?
             .row
               = icon(:tags, class: 'fa-lg fa-grey')

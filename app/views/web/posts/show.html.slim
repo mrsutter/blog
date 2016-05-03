@@ -24,3 +24,6 @@
           = link_to t('.edit'), edit_post_path(@post), class: 'btn btn-success'
           | &nbsp;
           = link_to t('.destroy'), post_path(@post), method: :delete, class: 'btn btn-danger', data: { confirm: t('.destroy_confirmation') }
+      .row
+        section#comments
+          = render 'web/posts/comments/index', post: @post, comment: @comment

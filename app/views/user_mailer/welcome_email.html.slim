@@ -4,7 +4,7 @@ br
 span
   = t('user_mailer.welcome.gratitude')
   |&nbsp;
-  = link_to @host, root_url
+  = link_to @host, root_url(host: Settings.host)
   | .
 br
 span

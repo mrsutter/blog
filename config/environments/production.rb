@@ -72,7 +72,7 @@ Rails.application.configure do
     domain: Figaro.env.smtp_domain,
     user_name: Figaro.env.smtp_user_name,
     password: Figaro.env.smtp_password,
-    authentication: :plain,
+    authentication: :plain
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

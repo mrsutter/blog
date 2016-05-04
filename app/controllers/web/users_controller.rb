@@ -10,7 +10,7 @@ class Web::UsersController < Web::ApplicationController
     init_user
     if @user.update_attributes(user_params)
       sign_in(@user)
-      UserMailer.welcome_email(@user).deliver_later
+      send_welcome_email
       redirect_to root_path
     else
       render :new
@@ -21,6 +21,10 @@ class Web::UsersController < Web::ApplicationController
 
   def init_user
     @user = User.new
+  end
+
+  def send_welcome_email
+    UserHttpMailer.new(current_user).welcome_email
   end
 
   def user_params

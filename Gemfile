@@ -22,6 +22,10 @@ gem 'bootstrap-kaminari-views'
 gem 'select2-rails'
 gem 'recaptcha', require: 'recaptcha/rails'
 
+gem 'render_anywhere'
+
+gem 'faraday'
+
 gem 'figaro'
 gem 'config'
 
@@ -60,6 +64,7 @@ end
 
 group :test do
   gem 'rspec-rails'
+  gem 'webmock'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
 end

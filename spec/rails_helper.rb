@@ -1,4 +1,5 @@
 ENV['RAILS_ENV'] ||= 'test'
+ENV['SMTP_API_URL'] ||= 'http://test.com'
 
 require 'simplecov'
 require 'coveralls'

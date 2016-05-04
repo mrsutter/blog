@@ -54,6 +54,10 @@
     font-size: small;
   }
 
+  .collection_radio_buttons {
+    padding: 0 10px 0 5px;
+  }
+
   .comments-count {
 
     a {
@@ -71,10 +75,26 @@
 
   }
 
+  @mixin text-highlight() {
+    color: orange;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .name-box {
+    span {
+      @include text-highlight;
+    }
+  }
+
   .body-box {
     font-size: 90%;
     white-space: pre-wrap;
     margin: 0 10px 0 10px;
+
+    span {
+      @include text-highlight;
+    }
   }
 
   .post-actions {

@@ -1,7 +1,7 @@
 describe Web::PostsController, type: :controller do
   describe '#index' do
     before do
-      create(:post)
+      create_list(:post, 5)
     end
 
     context 'when user is signed in' do

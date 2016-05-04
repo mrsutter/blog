@@ -3,3 +3,10 @@ mailer:
     no_reply: 'no-reply@yakspavel-blog.herokuapp.com'
 session:
   ttl: <%= 7.days %>
+pagination:
+  default: 5
+
+search:
+  default:
+    fragment_size: 1000000
+    number_of_fragments: 1

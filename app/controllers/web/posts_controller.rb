@@ -4,7 +4,13 @@ class Web::PostsController < Web::ApplicationController
                      only: [:index, :show]
 
   def index
-    @posts = Post.includes(:category).all
+    query_params = params[:q] || { sort: 'desc' }
+
+    @q = PostSearchType.new(query_params)
+    @posts = @q.search
+               .preload(post: { scope: Post.includes(:category) })
+               .page(params[:page])
+               .per(per_page)
   end
 
   def show

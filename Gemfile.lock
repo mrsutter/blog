@@ -20,6 +20,9 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_data (0.3.0)
+      activemodel
+      activesupport
     activejob (4.2.6)
       activesupport (= 4.2.6)
       globalid (>= 0.3.0)
@@ -67,6 +70,9 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.9.0)
     callsite (0.0.11)
+    chewy (0.8.4)
+      activesupport (>= 3.2)
+      elasticsearch (>= 1.0.0)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -91,6 +97,14 @@ GEM
     deep_merge (1.0.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    elasticsearch (1.0.17)
+      elasticsearch-api (= 1.0.17)
+      elasticsearch-transport (= 1.0.17)
+    elasticsearch-api (1.0.17)
+      multi_json
+    elasticsearch-transport (1.0.17)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.7.0)
@@ -137,6 +151,7 @@ GEM
     mime-types-data (3.2016.0221)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    multi_json (1.12.0)
     multipart-post (2.0.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -295,6 +310,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_data
   acts-as-taggable-on (~> 3.4)
   ancestry
   annotate
@@ -304,6 +320,7 @@ DEPENDENCIES
   bootstrap-kaminari-views
   bootstrap-sass (~> 3.3.6)
   bullet
+  chewy
   coffee-rails (~> 4.1.0)
   config
   coveralls

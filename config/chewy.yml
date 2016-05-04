@@ -1,0 +1,10 @@
+test:
+  host: 'localhost:9250'
+  prefix: 'test'
+development:
+  host: 'localhost:9200'
+production:
+  host: <%= Figaro.env.elastic_host %>
+  transport_options:
+    headers:
+      content_type: 'application/json'

@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include PostRepository
 
+  update_index('posts#post') { self }
+
   acts_as_taggable
 
   has_many :comments, dependent: :destroy

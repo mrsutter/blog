@@ -10,6 +10,10 @@ $(function() {
     tags: true
   });
 
+  $('.common-select').select2({
+    theme: 'bootstrap'
+  });
+
   $('#category-select').select2({
     theme: 'bootstrap',
     templateResult: function (data) {

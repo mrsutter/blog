@@ -1,40 +1,55 @@
 .posts
   .row
+    = render 'search'
+  .row
     .col-md-offset-3.col-md-6
       - if @posts.any?
         - @posts.each do |post|
-          - if current_user_admin?
-            .post-actions
-              = link_to  edit_post_path(post), class: :btn do
+          .post-actions
+            = link_to post_path(post._object), class: :btn do
+              = icon(:book)
+            - if current_user_admin?
+              = link_to  edit_post_path(post._object), class: :btn do
                 = icon(:edit)
-              = link_to post_path(post), method: :delete, class: :btn, data: { confirm: t('.destroy_confirmation') } do
+              = link_to post_path(post._object), method: :delete, class: :btn, data: { confirm: t('.destroy_confirmation') } do
                 = icon('trash-o')
           h3.text-center
-            = link_to post.name, post_path(post)
+            - if post.respond_to?(:name_highlight)
+              span.name-box
+                = post.name_highlight.html_safe
+            - else
+              span.name-box
+                = post.name
           h6.text-center
-            = l(post.created_at, format: :full)
+            = l(post._object.created_at, format: :full)
           .row
             = icon(:flag, class: 'fa-lg fa-grey')
             |&nbsp;&nbsp;&nbsp;
             span.category
-              = post.category.human_attribute_value(:name)
+              = post._object.category.human_attribute_value(:name)
           .row
-            .body-box
-              = post.body
+            - if post.respond_to?(:body_highlight)
+              .body-box
+                = post.body_highlight.html_safe
+            - else
+              .body-box
+                = post.body
           .pull-right.comments-count
-            = link_to post_path(post) + '#comments' do
+            = link_to post_path(post._object) + '#comments' do
               = icon('comments', class: 'fa-lg fa-grey')
               |&nbsp;
-              = post.comments.count
+              = post._object.comments.count
               |&nbsp;
-              = Comment.model_name.human(count: post.comments.count)
-          - if post.tag_list.any?
+              = Comment.model_name.human(count: post._object.comments.count)
+          - if post._object.tag_list.any?
             .row
               = icon(:tags, class: 'fa-lg fa-grey')
               |&nbsp;&nbsp;&nbsp;
               span.tags-box
-                = post.tag_list.join(', ')
+                = post._object.tag_list.join(', ')
           hr
+        .text-center
+          = paginate @posts, theme: 'twitter-bootstrap-3'
       - else
         h3.text-center= t('.no_posts')
         - if current_user_admin?

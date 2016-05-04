@@ -4,7 +4,7 @@ ru:
       index:
         no_posts: Пока нет ни одного поста :(
         destroy_confirmation: Удалить пост?
-        create_first_post: Создать первый пост
+        create_first_post: Создать пост
       show:
         edit: Редактировать
         destroy: Удалить
@@ -13,6 +13,13 @@ ru:
         new_post: Новый пост
         post_title: 'Пост #%{post_id}'
         submit: Сохранить
+      search:
+        search_form: Поиск
+        submit: Искать
+        search_by_name_or_body: Поиск по названию/содержанию
+        all_categories: Любая
+        desc: Сначала Последние
+        asc: Сначала ранние
       comments:
         show:
           guest: Гость

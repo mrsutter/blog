@@ -6,3 +6,10 @@ ru:
     errors:
       verification_failed: 'Пожалуйста, подтвердите что Вы не робот'
       recaptcha_unreachable: 'Cервис рекапчи не доступен, пожалуйста, повторите позже'
+  views:
+    pagination:
+      first: "Перв."
+      last: "Послед."
+      previous: "Предыд."
+      next: "След."
+      truncate: "&hellip;"

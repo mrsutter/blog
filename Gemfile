@@ -7,6 +7,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'unicorn'
 
+gem 'chewy'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -36,6 +38,7 @@ gem 'valid_email'
 gem 'human_attribute_values'
 gem 'russian'
 
+gem 'active_data'
 gem 'annotate'
 gem 'awesome_print'
 

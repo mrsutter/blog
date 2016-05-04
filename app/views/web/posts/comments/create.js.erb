@@ -12,6 +12,7 @@ var captchaErrors = $('#captcha-errors');
 
   commentsList.append("<%= j(render 'show', comment: @comment) %>");
   commentsForm[0].reset();
+  grecaptcha.reset();
 <% else %>
   captchaErrors.html('<%= j(@comment.errors.full_messages_for(:captcha).first)%>');
 <% end %>

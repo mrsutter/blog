@@ -10,3 +10,5 @@ search:
   default:
     fragment_size: 1000000
     number_of_fragments: 1
+
+recaptcha_api: 'https://www.google.com/recaptcha/api/siteverify'

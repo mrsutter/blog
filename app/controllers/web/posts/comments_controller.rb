@@ -28,6 +28,10 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
 
   def verify_comment
     return true if current_user
-    verify_recaptcha(model: @comment, attribute: :captcha)
+    Recaptcha.verify(@comment, recaptcha_response)
+  end
+
+  def recaptcha_response
+    params['g-recaptcha-response']
   end
 end

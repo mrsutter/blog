@@ -4,7 +4,7 @@
     span.submit-box
       #captcha-errors
       span.submit-element
-        = recaptcha_tags
+        .g-recaptcha data-sitekey=Figaro.env.recaptcha_public_key
       span.submit-element
         = f.button :submit, t('.submit'), class: 'btn btn-success'
   - else

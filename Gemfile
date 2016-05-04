@@ -22,8 +22,6 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'select2-rails'
-gem 'recaptcha', require: 'recaptcha/rails'
-
 gem 'render_anywhere'
 
 gem 'faraday'

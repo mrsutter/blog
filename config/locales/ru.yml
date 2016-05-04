@@ -3,9 +3,8 @@ ru:
     formats:
       full: '%d.%m.%Y %H:%M'
   recaptcha:
-    errors:
-      verification_failed: 'Пожалуйста, подтвердите что Вы не робот'
-      recaptcha_unreachable: 'Cервис рекапчи не доступен, пожалуйста, повторите позже'
+    verification_failed: 'Пожалуйста, подтвердите что Вы не робот'
+    unreachable: 'Cервис рекапчи не доступен, пожалуйста, повторите позже'
   views:
     pagination:
       first: "Перв."

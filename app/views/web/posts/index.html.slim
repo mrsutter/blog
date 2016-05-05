@@ -38,9 +38,10 @@
             = link_to post_path(post._object) + '#comments' do
               = icon('comments', class: 'fa-lg fa-grey')
               |&nbsp;
-              = post._object.comments.count
+              - comment_count = post._object.comments.available_for(current_user).count
+              = comment_count
               |&nbsp;
-              = Comment.model_name.human(count: post._object.comments.count)
+              = Comment.model_name.human(count: comment_count)
           - if post._object.tag_list.any?
             .row
               = icon(:tags, class: 'fa-lg fa-grey')

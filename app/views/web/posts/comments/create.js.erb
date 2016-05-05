@@ -5,8 +5,8 @@ var captchaErrors = $('#captcha-errors');
   var commentsList = $('#comments');
   var commentsCountElem = $('#comments-count');
 
-  var commentsCount = '<%= j(@post.comments.count.to_s)%>';
-  var commentsPluralized = '<%= j(Comment.model_name.human(count: @post.comments.count))%>';
+  var commentsCount = '<%= j(@comments.count.to_s)%>';
+  var commentsPluralized = '<%= j(Comment.model_name.human(count: @comments.count))%>';
   commentsCountElem.html(commentsCount + '&nbsp' + commentsPluralized);
   captchaErrors.html('');
 

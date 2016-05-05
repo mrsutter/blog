@@ -1,8 +1,13 @@
-.media.comment-container
+.media.comment-container id="comment-#{comment.id}"
   .media-left
     = image_tag('default_avatar.jpg', width: '40px')
   .media-body
     .media-heading
+      - if current_user_admin?
+        .comment-actions
+          = render 'web/posts/comments/visibility', comment: comment
+          = link_to post_comment_path(comment.post, comment), method: :delete, class: :btn, data: { confirm: t('.destroy_confirmation') }, remote: true do
+            = icon('trash-o')
       span.comment-author
         - if comment.user
           = comment.user.email
@@ -12,3 +17,4 @@
         |&nbsp; &bull; &nbsp;
         = l(comment.created_at, format: :full)
     = comment.body
+

@@ -1,0 +1,7 @@
+var commentId = '<%= j(@comment.id.to_s)%>';
+$("#comment-" + commentId).remove();
+
+var commentsCount = '<%= j(@comments.count.to_s)%>';
+var commentsPluralized = '<%= j(Comment.model_name.human(count: @comments.count))%>';
+var commentsCountElem = $('#comments-count');
+commentsCountElem.html(commentsCount + '&nbsp' + commentsPluralized);

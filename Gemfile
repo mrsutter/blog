@@ -38,6 +38,7 @@ gem 'russian'
 
 gem 'active_data'
 gem 'annotate'
+gem 'aasm'
 gem 'awesome_print'
 
 gem 'faker'

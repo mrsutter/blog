@@ -1,0 +1,2 @@
+var commentId = '<%= j(@comment.id.to_s)%>';
+$("#comment-" + commentId + "-visibility").html("<%= j(render 'visibility', comment: @comment) %>")

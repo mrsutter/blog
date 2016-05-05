@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
     resources :posts do
       scope module: :posts do
-        resources :comments
+        resources :comments, only: [:create, :destroy] do
+          member do
+            patch :accept
+            patch :decline
+          end
+        end
       end
     end
 

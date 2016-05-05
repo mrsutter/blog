@@ -1,9 +1,43 @@
 class Web::Posts::CommentsController < Web::Posts::ApplicationController
-  skip_before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_admin!
+  skip_before_action :authenticate_user!, :authenticate_admin!,
+                     only: [:create]
 
   def create
     init_comment
     save_comment
+    find_comments
+
+    respond_to do |format|
+      format.html { redirect_to post_path(resource_post) }
+      format.js
+    end
+  end
+
+  def accept
+    find_comment
+    @comment.accept!
+
+    respond_to do |format|
+      format.html { redirect_to post_path(resource_post) }
+      format.js
+    end
+  end
+
+  def decline
+    find_comment
+    @comment.decline!
+
+    respond_to do |format|
+      format.html { redirect_to post_path(resource_post) }
+      format.js
+    end
+  end
+
+  def destroy
+    find_comment
+    @comment.destroy!
+    find_comments
 
     respond_to do |format|
       format.html { redirect_to post_path(resource_post) }
@@ -16,6 +50,14 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
   def init_comment
     @comment = resource_post.comments.new
     @comment.user = current_user
+  end
+
+  def find_comment
+    @comment ||= resource_post.comments.find(params[:id])
+  end
+
+  def find_comments
+    @comments ||= resource_post.comments.available_for(current_user)
   end
 
   def comment_params

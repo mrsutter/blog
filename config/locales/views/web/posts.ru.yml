@@ -23,5 +23,9 @@ ru:
       comments:
         show:
           guest: Гость
+          destroy_confirmation: Удалить комментарий?
         form:
           submit: Добавить комментарий
+        visibility:
+          make_visible: Сделать видимым для всех пользователей?
+          make_unvisible: Сделать невидимым для всех пользователей?

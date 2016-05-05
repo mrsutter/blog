@@ -15,6 +15,7 @@ class Web::PostsController < Web::ApplicationController
 
   def show
     find_post
+    find_comments
     init_comment
   end
 
@@ -60,6 +61,10 @@ class Web::PostsController < Web::ApplicationController
 
   def find_post
     @post ||= Post.includes(comments: :user).find(params[:id])
+  end
+
+  def find_comments
+    @comments ||= @post.comments.available_for(current_user).ordered
   end
 
   def init_comment

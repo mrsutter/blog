@@ -1,12 +1,13 @@
 #comments-count
-  = post.comments.count
+  - comments_count = @comments.count
+  = comments_count
   |&nbsp;
-  = Comment.model_name.human(count: post.comments.count)
+  = Comment.model_name.human(count: comments_count)
 hr
   .media.comment-container
     .media-left
       = image_tag('default_avatar.jpg', width: '40px')
     .media-body
       = render 'web/posts/comments/form', method: :post, model_instance: comment, url: post_comments_path(post)
-  - post.comments.each do |comment|
+  - @comments.each do |comment|
     = render 'web/posts/comments/show', comment: comment

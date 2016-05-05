@@ -146,6 +146,17 @@
 
       font-size: 90%;
 
+        .comment-actions {
+
+          margin-left: 0px;
+          position: absolute;
+          right: 10px;
+
+          a {
+            padding-left: 0px;
+          }
+        }
+
       .media-body {
 
         .media-heading {

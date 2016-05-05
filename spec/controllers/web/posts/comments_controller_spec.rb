@@ -100,4 +100,58 @@ describe Web::Posts::CommentsController, type: :controller do
       end
     end
   end
+
+  describe '#accept' do
+    include_context 'sign in admin'
+
+    let(:comment) { create(:comment) }
+
+    it 'destroys user task' do
+      params = { post_id: comment.post.id, id: comment.id }
+
+      expect { patch :accept, params }
+        .to change { comment.reload.state }
+        .from('new')
+        .to('accepted')
+
+      expect(response).to redirect_to(post_url(comment.post))
+    end
+  end
+
+  describe '#decline' do
+    include_context 'sign in admin'
+
+    let(:comment) { create(:comment, state: 'accepted') }
+
+    it 'destroys user task' do
+      params = { post_id: comment.post.id, id: comment.id }
+
+      expect { patch :decline, params }
+        .to change { comment.reload.state }
+        .from('accepted')
+        .to('declined')
+
+      expect(response).to redirect_to(post_url(comment.post))
+    end
+  end
+
+  describe '#destroy' do
+    include_context 'sign in admin'
+
+    let(:body) { 'comment_to_destroy' }
+    let(:resource_post) { create(:post) }
+    let(:comment) { create(:comment, body: body, post: resource_post) }
+
+    it 'destroys user task' do
+      params = { post_id: resource_post.id, id: comment.id }
+
+      expect { delete :destroy, params }
+        .to change { resource_post.comments.count }.by(-1)
+
+      expect(response).to redirect_to(post_url(resource_post))
+
+      comment = resource_post.comments.find_by(body: body)
+      expect(comment).to be nil
+    end
+  end
 end

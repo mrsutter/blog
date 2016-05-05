@@ -1,0 +1,7 @@
+span id="comment-#{comment.id}-visibility"
+  - if comment.declined?
+    = link_to accept_post_comment_path(comment.post, comment), method: :patch, class: :btn, data: { confirm: t('.make_visible') }, remote: true do
+      = icon(:eye)
+  - else
+    = link_to decline_post_comment_path(comment.post, comment), method: :patch, class: :btn, data: { confirm: t('.make_unvisible') }, remote: true do
+      = icon('eye-slash')
